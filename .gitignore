@@ -12,5 +12,9 @@ data/original_images/
 *.jpeg
 *.webp
 
+# Keep README/report figures in git.
+!assets/
+!assets/*.png
+
 # Local metric outputs.
 outputs/
