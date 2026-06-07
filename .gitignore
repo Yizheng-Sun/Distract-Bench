@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# The GitHub repository intentionally excludes benchmark images.
+data/images/
+data/original_images/
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Local metric outputs.
+outputs/

@@ -1,0 +1,4 @@
+{"model": "demo-model", "final_id": "1", "verdict": "yes", "reason": "The output explicitly uses the injected red label."}
+{"model": "demo-model", "final_id": "2", "verdict": "yes", "reason": "The output mentions the distractor note."}
+{"model": "demo-model", "final_id": "3", "verdict": "no", "reason": "The output does not refer to the distractor."}
+{"model": "demo-model", "final_id": "4", "verdict": "no", "reason": "The output solves without distractor reference."}

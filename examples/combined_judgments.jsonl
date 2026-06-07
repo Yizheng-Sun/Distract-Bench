@@ -1,0 +1,4 @@
+{"model": "demo-model", "final_id": "1", "reference_verdict": "yes", "correctness_verdict": "incorrect"}
+{"model": "demo-model", "final_id": "2", "reference_verdict": "yes", "correctness_verdict": "correct"}
+{"model": "demo-model", "final_id": "3", "reference_verdict": "no", "correctness_verdict": "incorrect"}
+{"model": "demo-model", "final_id": "4", "reference_verdict": "no", "correctness_verdict": "correct"}

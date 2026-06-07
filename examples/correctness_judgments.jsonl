@@ -1,0 +1,4 @@
+{"model": "demo-model", "final_id": "1", "verdict": "incorrect", "prediction": "trap answer", "gold": "gold answer"}
+{"model": "demo-model", "final_id": "2", "verdict": "correct", "prediction": "gold answer", "gold": "gold answer"}
+{"model": "demo-model", "final_id": "3", "verdict": "incorrect", "prediction": "wrong answer", "gold": "gold answer"}
+{"model": "demo-model", "final_id": "4", "verdict": "correct", "prediction": "gold answer", "gold": "gold answer"}
