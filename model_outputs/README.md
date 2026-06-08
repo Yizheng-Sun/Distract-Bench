@@ -34,9 +34,11 @@ The actual images are not included in this GitHub repository.
 
 ## Corruption Reference Judgments
 
-`model_outputs/corruption_reference/` contains GPT-judged distractor-reference
-labels for the corrupt-side model outputs. Each per-model JSONL file also has
-506 rows sorted by public `final_id`.
+`model_outputs/corruption_reference/` contains LLM-judged
+distractor-reference labels for the corrupt-side model outputs. Each per-model
+JSONL file also has 506 rows sorted by public `final_id`. These labels can be
+regenerated with `scripts/judge_distractor_reference.py`; see the root README
+for the API command.
 
 - `verdict`: `yes` if the model explicitly refers to the injected distractor,
   `no` otherwise. One retained source judgment has `parse_error`.

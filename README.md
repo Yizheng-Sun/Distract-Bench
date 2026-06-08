@@ -5,7 +5,8 @@ answer-preserving semantic distractions in multimodal reasoning.
 
 This code repository releases the corrupt-side model outputs on Distract-Bench
 and the code for calculating the proposed DRR and HFR metrics. It also includes
-the benchmark JSONL metadata, while the actual images are intentionally excluded
+the script used to call an LLM judge for distractor-reference judgments and the
+benchmark JSONL metadata, while the actual images are intentionally excluded
 from this GitHub release.
 
 ## Repository Contents
@@ -17,6 +18,7 @@ Distract-Bench/
     edit_instructions.jsonl
   scripts/
     compute_drr_hfr.py
+    judge_distractor_reference.py
   examples/
     reference_judgments.jsonl
     correctness_judgments.jsonl
@@ -92,9 +94,45 @@ HFR by model, with DRR shown as reference markers:
 
 ![Distract-Bench HFR by model](assets/hfr_by_model.png)
 
+## LLM Distractor-Reference Judge
+
+`scripts/judge_distractor_reference.py` calls the OpenAI Responses API to
+regenerate the `verdict: "yes"` / `verdict: "no"` distractor-reference
+judgments included under `model_outputs/corruption_reference/`. This judge only
+decides whether a model output explicitly references, mentions, attends to, or
+uses the injected semantic distractor. It does not judge answer correctness.
+
+The judge uses `data/questions.jsonl`, `data/edit_instructions.jsonl`, and
+`model_outputs/corrupt_results/`; it does not require the image files. The
+default judge model is `gpt-5-nano`, and it can be changed with
+`--judge-model`.
+
+Install the judge dependencies and set an API key:
+
+```bash
+python -m pip install openai tqdm python-dotenv
+export OPENAI_API_KEY=...
+```
+
+Inspect planned judge calls without sending API requests:
+
+```bash
+python scripts/judge_distractor_reference.py --dry-run --limit 2
+```
+
+Generate reference judgments to a local output directory:
+
+```bash
+python scripts/judge_distractor_reference.py \
+  --workers 4 \
+  --out-root outputs/corruption_reference
+```
+
+
 ## Compute DRR/HFR
 
-The metric script has no third-party dependencies.
+The metric script has no third-party dependencies. The examples below use the
+tiny files in `examples/` only to demonstrate the expected judgment formats.
 
 Separate reference and correctness judgment files:
 
