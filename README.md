@@ -9,6 +9,10 @@ the script used to call an LLM judge for distractor-reference judgments and the
 benchmark JSONL metadata, while the actual images are intentionally excluded
 from this GitHub release.
 
+The full dataset, including the original and distracted images, is available on
+Hugging Face at
+[EthanSun/Distract-Bench](https://huggingface.co/datasets/EthanSun/Distract-Bench).
+
 ## Repository Contents
 
 ```text
@@ -49,6 +53,24 @@ semantic distraction specification:
 - `edit.edit_instruction`: image-editing instruction used to create the
   distracted image.
 - `edit.style_constraints`: visual styling constraints for the edit.
+
+## Full Dataset
+
+The GitHub repository is intended for code, model outputs, metric computation,
+and lightweight metadata review. To load the full 506-sample benchmark with
+images, use the Hugging Face dataset:
+
+```python
+from datasets import load_dataset
+
+ds = load_dataset("EthanSun/Distract-Bench", split="test")
+print(ds)
+print(ds[0]["image"], ds[0]["original_image"])
+```
+
+The Hugging Face release includes the same public numeric sample ids
+(`final_id` values `1` through `506`) so records can be joined directly with the
+JSONL metadata and model outputs in this repository.
 
 ## Metrics
 
