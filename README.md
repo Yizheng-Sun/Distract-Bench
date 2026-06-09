@@ -1,7 +1,7 @@
 # Distract-Bench
 
 Distract-Bench is a benchmark for evaluating robustness to
-answer-preserving semantic distractions in multimodal reasoning.
+answer-preserving semantic distractions in multimodal reasoning as introduced in the paper [Are Reasoning Vision-Language Models Robust to Semantic Visual Distractions?](https://arxiv.org/abs/2606.08894).
 
 This code repository releases the corrupt-side model outputs on Distract-Bench
 and the code for calculating the proposed DRR and HFR metrics. It also includes
@@ -12,6 +12,8 @@ from this GitHub release.
 The full dataset, including the original and distracted images, is available on
 Hugging Face at
 [EthanSun/Distract-Bench](https://huggingface.co/datasets/EthanSun/Distract-Bench).
+
+[![Distract-Bench overview](assets/intro_fig_preview.png)](assets/intro_fig.pdf)
 
 ## Repository Contents
 
