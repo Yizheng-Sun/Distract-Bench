@@ -3,36 +3,11 @@
 Distract-Bench is a benchmark for evaluating robustness to
 answer-preserving semantic distractions in multimodal reasoning as introduced in the paper [Are Reasoning Vision-Language Models Robust to Semantic Visual Distractions?](https://arxiv.org/abs/2606.08894).
 
-This code repository releases the corrupt-side model outputs on Distract-Bench
-and the code for calculating the proposed DRR and HFR metrics. It also includes
-the script used to call an LLM judge for distractor-reference judgments and the
-benchmark JSONL metadata, while the actual images are intentionally excluded
-from this GitHub release.
-
-The full dataset, including the original and distracted images, is available on
+This code repository releases the corrupt-side model outputs on Distract-Bench and the code for calculating the proposed DRR and HFR metrics. It also includes the script used to call an LLM judge for distractor-reference judgments and the benchmark JSONL metadata, while the actual images are available on
 Hugging Face at
 [EthanSun/Distract-Bench](https://huggingface.co/datasets/EthanSun/Distract-Bench).
 
 [![Distract-Bench overview](assets/intro_fig_preview.png)](assets/intro_fig.pdf)
-
-## Repository Contents
-
-```text
-Distract-Bench/
-  data/
-    questions.jsonl
-    edit_instructions.jsonl
-  scripts/
-    compute_drr_hfr.py
-    judge_distractor_reference.py
-  examples/
-    reference_judgments.jsonl
-    correctness_judgments.jsonl
-    combined_judgments.jsonl
-  model_outputs/
-    corrupt_results/
-    corruption_reference/
-```
 
 ## Dataset Metadata
 
@@ -57,9 +32,7 @@ semantic distraction specification:
 - `edit.style_constraints`: visual styling constraints for the edit.
 
 ## Full Dataset
-
-The GitHub repository is intended for code, model outputs, metric computation,
-and lightweight metadata review. To load the full 506-sample benchmark with
+To load the full 506-sample benchmark with
 images, use the Hugging Face dataset:
 
 ```python
